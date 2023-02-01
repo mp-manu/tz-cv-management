@@ -49,6 +49,32 @@ $config = [
             'rules' => [
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['guest', 'user'],
+        ],
+        'i18n' => [
+            'translations' => [
+                'yii2mod.rbac' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@yii2mod/rbac/messages',
+                ],
+
+            ],
+
+        ],
+    ],
+    'modules' => [
+        'rbac' => [
+            'class' => 'yii2mod\rbac\Module',
+        ]
+    ],
+    'as access' => [
+        'class' => yii2mod\rbac\filters\AccessControl::class,
+        'allowActions' => [
+            '/site/login',
+            '/site/index',
+        ]
     ],
     'params' => $params,
 ];

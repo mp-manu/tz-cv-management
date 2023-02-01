@@ -48,7 +48,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 ],
             ],
             Yii::$app->user->isGuest
-                ? ['label' => 'Вход', 'url' => ['/site/login']]
+                ? ['label' => 'Войти', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
                     . Html::beginForm(['/site/logout'])
                     . Html::submitButton(
